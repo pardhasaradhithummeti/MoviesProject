@@ -161,3 +161,25 @@
 .search-button:hover {
   background-color: #333;
 }
+
+/* Logout Button */
+.logout-container .btn.logout {
+  background: #ef4444; /* red */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-container .btn.logout:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+.logout-container .btn.logout:active {
+  transform: translateY(0);
+}

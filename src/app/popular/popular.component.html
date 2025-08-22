@@ -1,0 +1,27 @@
+<app-navbar (searchChanged)="searchInput($event)"></app-navbar>
+
+<div class="movie-container">
+  <ng-container *ngIf="popMovies && popMovies.length; else noMovies">
+    <div class="movie-card" *ngFor="let movie of popMovies">
+      <!-- Poster -->
+      <img [src]="movie.posterPath" alt="{{ movie.title }}" />
+
+      <!-- Info -->
+      <div class="movie-info">
+        <h2>{{ movie.title }}</h2>
+        <p>📅 {{ movie.releaseYear }}</p>
+        <p>🎬 {{ movie.genre }}</p>
+        <p>⭐ {{ movie.rating }}/10</p>
+
+        <!-- Trailer -->
+        <a class="trailer-btn" [href]="movie.trailerUrl" target="_blank">
+          ▶ Watch Trailer
+        </a>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #noMovies>
+    <p class="no-movies">No popular movies available.</p>
+  </ng-template>
+</div>

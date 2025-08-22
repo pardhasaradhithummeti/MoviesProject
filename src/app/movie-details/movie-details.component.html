@@ -1,0 +1,27 @@
+<div class="details-container" *ngIf="movie">
+  <div 
+    class="details-bg" 
+    [style.backgroundImage]="'url(' + movie.posterPath + ')'"
+  ></div>
+
+  <div class="details-wrapper">
+    <!-- Poster -->
+    <img [src]="movie.posterPath" alt="{{ movie.title }}" class="details-poster">
+
+    <!-- Content -->
+    <div class="details-content">
+      <h1>{{ movie.title }}</h1>
+      <p class="details-meta">
+        <span>{{ movie.releaseYear }}</span> • 
+        <span>{{ movie.genre }}</span> • 
+        <span>{{ movie.duration }} min</span>
+      </p>
+      <p class="details-rating">⭐ {{ movie.rating }}/10</p>
+      <p class="details-overview">{{ movie.overview }}</p>
+
+      <a [href]="movie.trailerUrl" target="_blank" class="watch-trailer">
+        🎬 Watch Trailer
+      </a>
+    </div>
+  </div>
+</div>

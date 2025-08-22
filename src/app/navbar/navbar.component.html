@@ -1,0 +1,27 @@
+<nav class="navbar">
+  <div class="navbar-left">
+    <h1 class="logo">MOVIES</h1>
+    <ul class="nav-links">
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/popular">Popular</a></li>
+      <li><a routerLink="/favourites">Favourites</a></li>
+    </ul>
+  </div>
+
+  <div class="navbar-right">
+    <div class="search-container">
+<input 
+  [(ngModel)]="movieSearch" 
+  class="search-bar" 
+  type="text" 
+  placeholder="Search for movies..." 
+  (input)="onsearch()" />    
+  </div>
+  <div (click)="onAvatarClick()" >
+    <img  class="avatar"  src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg" alt="User" (click)="onAvatarClick()" />
+  </div>
+    <div class="logout-container">
+      <button (click)="onLogout()" class="btn logout">logout</button>
+    </div>
+</div>
+</nav>

@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+
+<div class="favourites-container">
+  <div class="movies-grid">
+    <div class="movie-card" *ngFor="let movie of favouriteMovies">
+      <div class="poster-wrapper">
+        <img class="movie-poster" [src]="movie.posterPath" alt="{{ movie.title }}">
+      </div>
+      <div class="movie-info">
+        <h3 class="movie-title">{{ movie.title }}</h3>
+        <button (click)="  removeFromFav(movie.id)" class="fav-toggle" [ngClass]="{ 'added': movie.isFavourite }">
+          {{ movie.isFavourite ? 'Remove from Favourites' : 'Add to Favourites' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

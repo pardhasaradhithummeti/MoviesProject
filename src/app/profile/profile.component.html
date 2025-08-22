@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<div class="profile-container">
+  <h2>User Profile</h2>
+
+  <div class="profile-info">
+    <label for="email">Email</label>
+    <input type="email" id="email" [(ngModel)]="email" />
+  </div>
+
+  <div class="profile-info">
+    <label for="username">Username</label>
+    <input type="text" id="username" [(ngModel)]="username" />
+  </div>
+
+  <div class="profile-info">
+    <label for="currentPassword">Current Password</label>
+    <input type="password" id="currentPassword" [(ngModel)]="currentPassword" />
+  </div>
+
+  <div class="profile-info">
+    <label for="newPassword">New Password</label>
+    <input type="password" id="newPassword" [(ngModel)]="newPassword" />
+  </div>
+
+  <div class="profile-info">
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" id="confirmPassword" [(ngModel)]="confirmPassword" />
+  </div>
+
+  <div class="btn-group">
+    <button class="btn update" (click)="updateProfile()">Update Profile</button>
+    <button class="btn change" (click)="changePassword()">Change Password</button>
+  </div>
+</div>

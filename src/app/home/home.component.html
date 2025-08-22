@@ -1,0 +1,56 @@
+<app-navbar (searchChanged)="searchInput($event)"></app-navbar>
+
+<div class="home-container">
+
+  <!-- Telugu Movies -->
+  <div class="movie-section">
+    <h2 class="section-title">Telugu Movies</h2>
+    <div class="movie-list">
+      <ng-container *ngFor="let movie of movies">
+        <div class="movie-item" *ngIf="movie.language === 'Telugu'">
+          <img (click)="goToMovie(movie)" class="movie-poster" [src]="movie.posterPath" alt="{{ movie.title }}">
+          <h3 class="movie-title">{{ movie.title }}</h3>
+          <button class="fav-toggle" [ngClass]="{ 'added': movie.isFavourite }"
+            (click)="favouriteMovie(movie.id )">
+            {{ movie.isFavourite ? 'Remove' : 'Add' }}
+          </button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Hindi Movies -->
+  <div class="movie-section">
+    <h2 class="section-title">Hindi Movies</h2>
+    <div class="movie-list">
+      <ng-container *ngFor="let movie of movies">
+        <div class="movie-item" *ngIf="movie.language === 'Hindi'">
+          <img (click)="goToMovie(movie)" class="movie-poster" [src]="movie.posterPath" alt="{{ movie.title }}">
+          <h3 class="movie-title">{{ movie.title }}</h3>
+          <button class="fav-toggle" [ngClass]="{ 'added': movie.isFavourite }"
+            (click)="favouriteMovie(movie.id)">
+            {{ movie.isFavourite ? 'Remove' : 'Add' }}
+          </button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- English Movies -->
+  <div class="movie-section">
+    <h2 class="section-title">English Movies</h2>
+    <div class="movie-list">
+      <ng-container *ngFor="let movie of movies">
+        <div class="movie-item" *ngIf="movie.language === 'English'">
+          <img (click)="goToMovie(movie)" class="movie-poster" [src]="movie.posterPath" alt="{{ movie.title }}">
+          <h3 class="movie-title">{{ movie.title }}</h3>
+          <button class="fav-toggle" [ngClass]="{ 'added': movie.isFavourite }"
+            (click)="favouriteMovie(movie.id)">
+            {{  movie.isFavourite ? 'Remove' : 'Add' }}
+          </button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+</div>
